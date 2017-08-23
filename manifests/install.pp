@@ -36,7 +36,7 @@ class bamboo::install inherits bamboo {
   file_line { 'Set bamboo data directory':
     ensure  => present,
     path    => "${bamboo_home}/current/atlassian-bamboo/WEB-INF/classes/bamboo-init.properties",
-    line    => "bamboo.home=${bamboo_data}\n",
+    line    => "bamboo.home=${bamboo_data}",
     require => [ File["${bamboo_home}/current"], File[$bamboo_data] ],
   }
 }
